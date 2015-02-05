@@ -33,15 +33,15 @@ repositories {
 
 android {
     compileSdkVersion 21
-    buildToolsVersion "21.1.2"
+    buildToolsVersion "21.1.1"
 
     def Properties versionProps = new Properties()
     versionProps.load(new FileInputStream(file('version.properties')))
 
     defaultConfig {
         minSdkVersion 17
-        targetSdkVersion 21
-        renderscriptTargetApi 21
+        targetSdkVersion 19
+        renderscriptTargetApi 19
         renderscriptSupportModeEnabled true
 
         versionName versionProps['name']
@@ -63,18 +63,18 @@ android {
         }
     }
 
-    productFlavors {
+    /* productFlavors {
         dev {
             // dev utilizes minSDKVersion = 21 to allow the Android gradle plugin
             // to pre-dex each module and produce an APK that can be tested on
             // Android Lollipop without time consuming dex merging processes.
             minSdkVersion 21
-            multiDexEnabled true
+            multiDexEnabled false
         }
 
         // prod {
         // }
-    }
+    } */
 
     buildTypes {
         debug {
