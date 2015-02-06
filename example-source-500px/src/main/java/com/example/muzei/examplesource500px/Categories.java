@@ -29,7 +29,7 @@ public interface Categories {
     public static final String CityAndArchitecture = "City & Architecture";
     public static final String Sport = "Sport";
     public static final String Commercial = "Commercial";
-    public static final String Still Life = "Still Life";
+    public static final String StillLife = "Still Life";
     public static final String Concert = "Concert";
     public static final String Street = "Street";
     public static final String Family = "Family";
