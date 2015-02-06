@@ -42,6 +42,7 @@ import java.io.OutputStream;
 import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
+import java.net.SocketException;
 import java.net.URL;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -275,7 +276,8 @@ public class IOUtil {
             conn.setReadTimeout(DEFAULT_READ_TIMEOUT);
             in = conn.getInputStream();
             return readFullyPlainText(in);
-
+        } catch (IOException e) {
+            throw new IOException(e);
         } finally {
             if (in != null) {
                 in.close();
